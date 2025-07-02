@@ -1,0 +1,22 @@
+name: MegaLinter
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  megalinter:
+    name: MegaLinter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: MegaLinter
+        uses: oxsecurity/megalinter@v7
+        env:
+          # Optional: Customize linters and rules
+          ENABLE_LINTERS: MARKDOWN,YAML,JSON,XML,TSLINT,ESLINT,SHELL
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

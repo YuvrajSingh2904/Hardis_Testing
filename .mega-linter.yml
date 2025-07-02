@@ -1,0 +1,12 @@
+LINTERS:
+  - ESLINT
+  - MARKDOWN
+  - YAML
+  - XML
+  - APEX
+
+APEX_FILE_EXTENSIONS: ["cls", "trigger"]
+APEX_LINTER_RULES_PATH: .sfdx/apex-lint.json # Optional custom rules path
+
+# Optional: Skip some directories
+FILTER_REGEX_EXCLUDE: (node_modules|\.sfdx|coverage|test-results)
